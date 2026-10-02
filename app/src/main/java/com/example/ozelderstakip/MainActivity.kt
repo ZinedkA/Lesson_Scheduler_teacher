@@ -9,6 +9,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModelProvider
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Settings
 import com.example.ozelderstakip.data.local.AppDatabase
 import com.example.ozelderstakip.domain.repository.LessonRepository
 import com.example.ozelderstakip.domain.repository.PaymentRepository
@@ -47,25 +52,25 @@ class MainActivity : ComponentActivity() {
                     bottomBar = {
                         androidx.compose.material3.NavigationBar {
                             androidx.compose.material3.NavigationBarItem(
-                                icon = { androidx.compose.material3.Icon(androidx.compose.material.icons.Icons.Default.DateRange, contentDescription = "Takvim") },
+                                icon = { androidx.compose.material3.Icon(Icons.Default.DateRange, contentDescription = "Takvim") },
                                 label = { androidx.compose.material3.Text("Takvim") },
                                 selected = false,
                                 onClick = { navController.navigate("calendar") }
                             )
                             androidx.compose.material3.NavigationBarItem(
-                                icon = { androidx.compose.material3.Icon(androidx.compose.material.icons.Icons.Default.Person, contentDescription = "Öğrenciler") },
+                                icon = { androidx.compose.material3.Icon(Icons.Default.Person, contentDescription = "Öğrenciler") },
                                 label = { androidx.compose.material3.Text("Öğrenciler") },
                                 selected = false,
                                 onClick = { navController.navigate("students") }
                             )
                             androidx.compose.material3.NavigationBarItem(
-                                icon = { androidx.compose.material3.Icon(androidx.compose.material.icons.Icons.Default.ShoppingCart, contentDescription = "Finans") }, // Temporary icon
+                                icon = { androidx.compose.material3.Icon(Icons.Default.ShoppingCart, contentDescription = "Finans") }, // Temporary icon
                                 label = { androidx.compose.material3.Text("Finans") },
                                 selected = false,
                                 onClick = { navController.navigate("finance") }
                             )
                             androidx.compose.material3.NavigationBarItem(
-                                icon = { androidx.compose.material3.Icon(androidx.compose.material.icons.Icons.Default.Settings, contentDescription = "Ayarlar") },
+                                icon = { androidx.compose.material3.Icon(Icons.Default.Settings, contentDescription = "Ayarlar") },
                                 label = { androidx.compose.material3.Text("Ayarlar") },
                                 selected = false,
                                 onClick = { navController.navigate("settings") }
