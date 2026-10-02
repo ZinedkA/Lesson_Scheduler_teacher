@@ -26,10 +26,18 @@ jobs:
         chmod +x gradlew
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --stacktrace --info
 
     - name: Upload APK Artifact
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: OzelDersTakip-APK
         path: app/build/outputs/apk/debug/app-debug.apk
+
+    - name: Upload Build Reports
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Build-Error-Reports
+        path: app/build/reports/
